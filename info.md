@@ -1,5 +1,5 @@
 ---
-title: Información
+title: Informacion
 layout: page
 permalink: /info
 ---
