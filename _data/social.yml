@@ -22,7 +22,7 @@ twitter:
 vimeo:
 wordpress:
 youtube: # Youtube channel token like: UCqECaJ8Gagnn7YCbPEzWH6g
-twitch: sirrandoo
+twitch: dadigui
 tiktok:
 
 # Share button options
@@ -35,4 +35,4 @@ share:
   reddit: true
   linkedin:
   wordpress:
-  email: true
+  email: 
