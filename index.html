@@ -26,11 +26,17 @@ title: Tienda
         {%- continue -%}
     {%- endif -%}
 
-    {%- if site.data.itemdata[item.defname].IsDrug -%}
+    {%- if item.category == "Drugs" -%}
         {%- assign drugsForDisplay = drugsForDisplay | push: item | sort: "abr" -%}
         {%- continue -%}
     {%- endif -%}
-                         
+
+    {%- if item.category != "Drugs" -%}
+        {%- assign itemsForDisplay = itemsForDisplay | push: item | sort: "abr" -%}
+        {%- continue -%}
+    {%- endif -%}
+{%- endfor -%}
+        
     {%- if item.category == "Animals" -%}
         {%- assign animalsForDisplay = animalsForDisplay | push: item | sort: "abr" -%}
         {%- continue -%}
