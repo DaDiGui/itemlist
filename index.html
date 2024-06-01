@@ -14,6 +14,7 @@ title: Tienda
 {%- assign traitsForDisplay = '' | split: ',' -%}
 {%- assign kindsForDisplay = site.data.ShopExt.races | where: "enabled", "true" | sort: "name" -%}
 {%- assign weaponsForDisplay = '' | split: ',' -%}
+{%- assign drugsForDisplay = '' | split: ',' -%}
 
 {%- for item in site.data.StoreItems.items -%}
     {%- if item.price <= 0 -%}
