@@ -10,15 +10,18 @@
 
         {{- name -}}
 
-        {%- if site.store.items.mod -%}
+        {%- if site.store.drugs.mod -%}
             <br/>
             <span class="metadata">
-                {{- site.data.language.from | | replace: '%s', include.itemdata.Mod -}}
+                {% capture mod %}
+                    {{ site.data.language.from | replace: '%s', include.itemdata.Mod }}
+                {%- endcapture -%}
+
+                {{- mod -}}
             </span>
         {%- endif -%}
 
-
-        {%- if site.store.items.usage -%}
+        {%- if site.store.drugs.usage -%}
             <br/>
             <span class="metadata">
                 {% capture usage %}
@@ -30,33 +33,32 @@
         {%- endif -%}
     </td>
 
-
     <td>
-        {{- include.item.price -}}
+        {{- item.price -}}
 
-        {%- if site.store.items.weight and include.itemdata.Weight != 1 -%}
+        {%- if site.store.drugs.weight and include.itemdata.Weight != 1 -%}
             <br/>
             <span class="metadata">
                 {% capture weight %}
                     {{ site.data.language.weight }}: {{ include.itemdata.Weight }}
-                {% endcapture %}
+                {%- endcapture -%}
 
                 {{- weight -}}
             </span>
         {%- endif -%}
 
-        {%- if site.store.items.quantity and include.itemdata.HasQuantityLimit == true -%}
+        {%- if site.store.drugs.quantity and include.itemdata.HasQuantityLimit == true -%}
             <br/>
             <span class="metadata">
-                {% capture quantityLimit %}
+                {% capture quantity %}
                     {{ site.data.language.limit }}: {{ include.itemdata.QuantityLimit }}
                 {% endcapture %}
 
-                {{- quantityLimit -}}
+                {{- quantity -}}
             </span>
         {%- endif -%}
 
-        {%- if site.store.items.karma and include.itemdata.KarmaType != nil -%}
+        {%- if site.store.drugs.karma and include.itemdata.KarmaType != nil -%}
             <br/>
             <span class="metadata">
                 {% capture karmaType %}
