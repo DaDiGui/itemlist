@@ -66,6 +66,10 @@ title: Tienda
         {%- include tab.html id='weapons' -%}
     {%- endif -%}
 
+    {%- if weaponsForDisplay.size > 0 -%}
+        {%- include tab.html id='drugs' -%}
+    {%- endif -%}
+
     {%- if animalsForDisplay.size > 0 -%}
         {%- include tab.html id='animals' -%}
     {%- endif -%}
