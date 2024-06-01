@@ -30,12 +30,6 @@ title: Tienda
         {%- assign drugsForDisplay = drugsForDisplay | push: item | sort: "abr" -%}
         {%- continue -%}
     {%- endif -%}
-
-    {%- if item.category != "Drugs" -%}
-        {%- assign itemsForDisplay = itemsForDisplay | push: item | sort: "abr" -%}
-        {%- continue -%}
-    {%- endif -%}
-{%- endfor -%}
         
     {%- if item.category == "Animals" -%}
         {%- assign animalsForDisplay = animalsForDisplay | push: item | sort: "abr" -%}
@@ -77,7 +71,7 @@ title: Tienda
         {%- include tab.html id='weapons' -%}
     {%- endif -%}
 
-    {%- if weaponsForDisplay.size > 0 -%}
+    {%- if drugsForDisplay.size > 0 -%}
         {%- include tab.html id='drugs' -%}
     {%- endif -%}
 
